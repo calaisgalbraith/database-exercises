@@ -1,11 +1,9 @@
---At the top of albums_seeder.sql be sure to USE the codeup_test_db database.
+-- Remember to USE the codeup_test_db.
 USE codeup_test_db;
 
---After your USE statement, add a TRUNCATE query to delete all records from the table before inserting.
--- Test your change and make sure you no longer get any duplicate records when running albums_seeder.sql.
-TRUNCATE codeup_test_db;
+TRUNCATE albums;
 
---Refactor to use a single INSERT statement for all the records and test it again. Again, this should not generate any output.
+-- Use INSERT to add records for all the albums from this list on Wikipedia that claim over 30 million sales (the first two tables)
 INSERT INTO ALBUMS(artist, name, release_date, sales, genre)
 VALUES('Michael Jackson', 'Thriller', 1982, 47.9, 'pop, rock, funk'),
       ('AC/DC', 'Back in Black', 1980, 29.6, 'hard rock'),
@@ -31,31 +29,12 @@ VALUES('Michael Jackson', 'Thriller', 1982, 47.9, 'pop, rock, funk'),
       ('Metallica', 'Metallica', 1991,  21.2, 'heavy metal'),
       ('The Beatles', '1', 2000, 22.6, 'rock'),
       ('The Beatles', 'Abbey Road', 1969, 14.4, 'rock'),
-      ('ABBA', 'Gold: Greatest Hits', 1992, 23.0, 'pop, disco')
+      ('ABBA', 'Gold: Greatest Hits', 1992, 23.0, 'pop, disco'),
       ('Bruce Springsteen', 'Born in the U.S.A.', 1984, 19.6, 'heartland rock'),
       ('Pink Floyd',  'The Wall', 1979, 17.6, 'progressive rock'),
       ('James Horner', 'Titanic: Music from the Motion Picture', 1997, 18.1, 'soundtrack'),
       ('Dire Straits', 'Brothers in Arms', 1985, 17.7, 'roots rock, blues rock, soft rock'),
       ('Nirvana', 'Nevermind', 1991, 16.7, 'grunge, alternative rock'),
       ('Santana', 'Supernatural', 1999, 20.5, 'latin rock'),
-      ('Guns N'' Roses',  'Appetite for Destruction', 1987, 21.6, 'hard rock');
-      ('Elton John', 'Goodebye Yellow Brick Road', 1973, 8.5, 'rock, pop rock, glam rock')
-
---Note that running the albums_seeder.sql multiple times will generate duplicate data
---First write your queries as separate INSERT statements for each record and test. You should see no output.
-    -- INSERT INTO ALBUMS(artist, name, release_date, sales, genre)
-    -- VALUES('Fleetwood Mac', 'Rumors', 1977, 27.9, 'soft rock');
-
-    -- INSERT INTO ALBUMS(artist, name, release_date, sales, genre)
-    -- VALUES('ABBA', 'Gold: Greatest Hits', 1992, 23.0, 'Pop');
-
-    -- INSERT INTO ALBUMS(artist, name, release_date, sales, genre)
-    -- VALUES('Madonna', 'The Immaculate Collection', 1990, 19.5, 'Pop');
-
-    -- INSERT INTO ALBUMS(artist, name, release_date, sales, genre)
-    -- VALUES('The Beatles', '1', 2000, 23.5, 'Rock');
-
-    -- INSERT INTO ALBUMS(artist, name, release_date, sales, genre)
-    -- VALUES('Shania Twain', 'Come On Over', 1997, 29.6, 'Country');
-
-    --etc.
+      ('Guns N'' Roses',  'Appetite for Destruction', 1987, 21.6, 'hard rock'),
+      ('Elton John', 'Goodebye Yellow Brick Road', 1973, 8.5, 'rock, pop rock, glam rock');
