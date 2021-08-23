@@ -1,14 +1,8 @@
 USE codeup_test_db;
-
---Write some SQL to drop a table named albums if it exists.
 DROP TABLE IF EXISTS albums;
 
---TODO: Get it to work in terminal"
-
---Create table albums
-CREATE TABLE IF NOT EXISTS albums(
-
-    id INT UNSIGNED NOT NULL AUTO-INCREMENT,
+CREATE TABLE IF NOT EXISTS albums (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     artist VARCHAR(100) NOT NULL,
     name VARCHAR(100) NOT NULL,
     release_date INT NOT NULL,
