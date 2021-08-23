@@ -1,6 +1,10 @@
 --At the top of albums_seeder.sql be sure to USE the codeup_test_db database.
 USE codeup_test_db;
 
+--After your USE statement, add a TRUNCATE query to delete all records from the table before inserting.
+-- Test your change and make sure you no longer get any duplicate records when running albums_seeder.sql.
+TRUNCATE codeup_test_db;
+
 --Refactor to use a single INSERT statement for all the records and test it again. Again, this should not generate any output.
 INSERT INTO ALBUMS(artist, name, release_date, sales, genre)
 VALUES('Michael Jackson', 'Thriller', 1982, 47.9, 'pop, rock, funk'),
