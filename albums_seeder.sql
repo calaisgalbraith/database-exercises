@@ -4,7 +4,7 @@ USE codeup_test_db;
 TRUNCATE albums;
 
 -- Use INSERT to add records for all the albums from this list on Wikipedia that claim over 30 million sales (the first two tables)
-INSERT INTO ALBUMS(artist, name, release_date, sales, genre)
+INSERT INTO albums(artist, name, release_date, sales, genre)
 VALUES('Michael Jackson', 'Thriller', 1982, 47.9, 'pop, rock, funk'),
       ('AC/DC', 'Back in Black', 1980, 29.6, 'hard rock'),
       ('Meat Loaf', 'Bat Out of Hell', 1977, 21.7, 'hard rock, glam rock, progressive rock'),
