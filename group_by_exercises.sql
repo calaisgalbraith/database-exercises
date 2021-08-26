@@ -6,11 +6,11 @@ use employees;
 
 -- DONE: Find your query for employees whose last names start and end with 'E'.
 -- Update the query to find just the unique last names that start and end with 'E' using GROUP BY.
-SELECT last_name
-from employees
-where last_name LIKE "E%"
-   AND last_name LIKE "%e"
-GROUP BY last_name;
+SELECT e.last_name
+from employees as e
+where e.last_name LIKE "E%"
+   AND e.last_name LIKE "%e"
+GROUP BY e.last_name;
 
 -- DONE: Update your previous query to now find unique combinations of first and last name where the last name
 -- starts and ends with 'E'
