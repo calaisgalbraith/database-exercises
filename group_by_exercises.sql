@@ -38,9 +38,12 @@ GROUP BY e.ast_name;
 
 -- Update your query for 'Irena', 'Vidya', or 'Maya'. Use count(*) and GROUP BY to find the
 -- number of employees for each gender with those names.
-SELECT e.first_name, e.gender, COUNT(e.gender)
+SELECT e.gender, COUNT(e.gender) as 'count'
 from employees as e
-where e.first_name in ('Irena', 'Vidya', 'Maya')
-GROUP BY e.first_name, e.gender
-ORDER BY e.first_name;
+where e.first_name in ('Irena'
+, 'Vidya', 'Maya')
+GROUP BY e.gender
+ORDER BY e.gender;
+
+
 

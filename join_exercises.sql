@@ -44,8 +44,8 @@ FROM employees as e
 WHERE dm.to_date = '9999-01-01'and s.to_date = '9999-01-01'
 ORDER BY d.dept_name;
 
-# Bonus Find the names of all current employees, their department name, and their current manager's name .
-SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Employee', d.dept_name as 'Department',
+# Bonus Find the names of all current employees, their department name, and their current manager's name.
+SELECT DISTINCT CONCAT(e.first_name, ' ', e.last_name) AS 'Employee', d.dept_name as 'Department', CONCAT(me.first_name, ' ', me.last_name) as 'Manager'
 FROM employees as e
     JOIN dept_emp de
         on e.emp_no = de.emp_no
@@ -53,4 +53,7 @@ FROM employees as e
         on de.dept_no = d.dept_no
     JOIN dept_manager dm
         on d.dept_no = dm.dept_no
-WHERE de.to_date = '9999-01-01';
+    JOIN employees me
+        on dm.emp_no = me.emp_no
+WHERE de.to_date = '9999-01-01' and ('9999-01-01' BETWEEN dm.from_date and dm.to_date);
+
