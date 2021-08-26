@@ -14,18 +14,18 @@ GROUP BY last_name;
 
 -- DONE: Update your previous query to now find unique combinations of first and last name where the last name
 -- starts and ends with 'E'
-SELECT last_name
-from employees
-where last_name LIKE "E%"
-  AND last_name LIKE "%e"
-GROUP BY last_name, first_name;
+SELECT e.last_name
+from employees as e
+where e.last_name LIKE "E%"
+  AND e.last_name LIKE "%e"
+GROUP BY e.last_name, e.first_name;
 
 -- Find the unique last names with a 'q' but not 'qu'.
-SELECT last_name
-from employees
-where last_name LIKE "%q%"
-  AND last_name NOT LIKE "%qu%"
-GROUP BY last_name;
+SELECT e.last_name
+from employees as e
+where e.last_name LIKE "%q%"
+  AND e.last_name NOT LIKE "%qu%"
+GROUP BY e.last_name;
 
 
 -- Add a COUNT() to your results and use ORDER BY to make it easier to find employees whose unusual name
