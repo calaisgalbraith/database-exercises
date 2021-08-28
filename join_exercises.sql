@@ -21,15 +21,13 @@ WHERE e.gender like "F" AND dm.to_date = '9999-01-01'
 ORDER BY d.dept_name;
 
 # DONE: Find the current titles of employees currently working in the Customer Service department.
-SELECT t.title as 'Title'
-FROM employees as e
-         JOIN titles as t
-              ON t.emp_no = e.emp_no
+SELECT t.title as 'Title', COUNT(t.emp_no) as 'Count'
+FROM titles as t
         JOIN dept_emp de
-            On e.emp_no = de.emp_no
+            On t.emp_no = de.emp_no
         JOIN departments d
             on d.dept_no = de.dept_no
-WHERE d.dept_name = 'Customer Service' AND de.to_date = '9999-01-01'
+WHERE d.dept_name = 'Customer Service' AND de.to_date = '9999-01-01' and t.to_date = '9999-01-01';
 GROUP BY t.title;
 
 # DONE Find the current salary of all current managers.
