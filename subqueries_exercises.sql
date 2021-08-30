@@ -53,5 +53,7 @@ ORDER BY d.dept_name;
 
 SELECT e.first_name, e.last_name, s.salary
 FROM employees as e, salaries as s
-ORDER BY s.salary desc
-LIMIT 10;
+WHERE e.emp_no IN(
+    SELECT s.emp_no
+    WHERE s.salary LIKE MAX(s.salary)
+    )
