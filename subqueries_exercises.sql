@@ -25,16 +25,33 @@ WHERE t.emp_no IN(
 
 
 # DONE Find all the current department managers that are female.
-SELECT e.first_name, e.last_name, e.emp_no
+SELECT e.first_name, e.last_name
 FROM employees as e, dept_manager as dm
 WHERE e.gender = "F"
   AND e.emp_no IN (
     SELECT dm.emp_no
-      WHERE dm.to_date = "9999-01-01");
+      WHERE dm.to_date LIKE "9999-01-01");
 
 # BONUS
-# Find all the department names that currently have female managers
+# TODO: CHECK IF CAN CUT DOWN ON RUN TIME
+# DONE -Find all the department names that currently have female managers
+SELECT d.dept_name
+FROM departments as d, dept_manager as dm, employees as e
+WHERE d.dept_no IN (
+    SELECT dm.dept_no
+    WHERE dm.to_date = "9999-01-01"
 
+    AND dm.emp_no IN(
+        SELECT e.emp_no
+        WHERE e.gender = "F"
+        )
+    )
+ORDER BY d.dept_name;
 
 
 # Find the first and last name of the employee with the highest salary.
+
+SELECT e.first_name, e.last_name, s.salary
+FROM employees as e, salaries as s
+ORDER BY s.salary desc
+LIMIT 10;
